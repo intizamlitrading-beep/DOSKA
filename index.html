@@ -237,7 +237,7 @@ if(n=='pen')h='<div class="row">'+wid()+'</div><hr><div class="row" style="width
 else if(n=='laser')h='<div class="row" style="width:56px">'+cols(S.lc,'data-l')+'</div>';
 else if(n=='shapes')h=SH.map(function(s){return'<button data-t="'+s[0]+'" class="'+(S.tool==s[0]?'on':'')+'">'+s[1]+'</button>'}).join('')+'<hr><div class="row">'+wid()+'</div><hr><div class="row" style="width:56px">'+cols(S.color,'data-c')+'</div>';
 else if(n=='emoji')h='<div class="em">'+EM.map(function(e){return'<button data-e="'+e+'">'+e+'</button>'}).join('')+'</div>';
-else if(n=='chart'){cls='card';h='<div class="menu"><div class="row" style="justify-content:start;margin:4px 0">'+cols(S.color,'data-c')+'</div><div class="row" style="justify-content:start">'+wid()+'</div>'+
+else if(n=='chart'){cls='card';h='<div class="menu">'+
  '<div class="mc">'+TR.map(function(s){return'<div class="sec"><h5>'+s[0]+'</h5>'+s[1].map(function(i){var k=HK[i[0]];return'<button data-t="'+i[0]+'" class="'+(S.tool==i[0]?'on':'')+'"><b'+(COLC[i[0]]?' style="color:'+COLC[i[0]]+'"':'')+'>'+i[1]+'</b>'+i[2]+(k?'<span class="kb">'+k+'</span>':'')+'</button>'}).join('')+'</div>'}).join('')+'</div></div>'}
 pop.className=cls;pop.innerHTML=h;pop.style.display='flex'}
 function openPop(n,btn){openP=n;renderP();var r=btn.getBoundingClientRect();pop.style.top=Math.max(8,Math.min(r.top,innerHeight-pop.offsetHeight-8))+'px'}
